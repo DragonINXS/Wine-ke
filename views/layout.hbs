@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/style.css" />
     <!-- <script src="main.js"></script> -->
     <title>{{title}}</title>
 </head>
@@ -23,7 +23,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
             <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
             Brand
         </a>
@@ -31,9 +31,9 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
+            {{!-- <li class="nav-item active">
                 <a class="nav-link" href="/login" data-toggle="modal" data-target="#loginModal">Login <span class="sr-only">(current)</span></a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a class="nav-link" href="/signup">Signup</a>
             </li>
@@ -51,33 +51,56 @@
                 </div>
             </li>
         </ul>
-        <span class="navbar-text">
+        <a class="nav-link" href="/login" data-toggle="modal" data-target="#loginModal">Login <span class="sr-only">(current)</span></a>
+
+        {{!-- <span class="navbar-text">
             Navbar text with an inline element
-        </span>
-        <form class="form-inline my-2 my-lg-0">
+        </span> --}}
+        {{!-- <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        </form> --}}
     </div>
 </nav>
 
 {{{body}}}
 
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+
+      {{!-- modal content goes here --}}
+       
+        <form action="/login" method="POST">
+            
+          <label for="">Username: </label>
+          <input type="text" name="nsername"> <br>
+
+          <label for="">Password: </label>
+          <input type="password" name="password">
+          {{!-- <button>Submit</button> --}}
+
+        </form>
+
+        <a href="/signup">Sign Up</a>
+
+        {{#if message}}
+          <div>
+              {{message}}
+          </div>
+        {{/if}}
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Login</button>
       </div>
     </div>
   </div>  
