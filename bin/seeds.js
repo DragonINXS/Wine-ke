@@ -10,7 +10,7 @@ const Type = require('../models/type');
 const dbName = 'wine-ke';
 mongoose.connect(`mongodb://localhost/${dbName}`);
 
-const varietal = [
+const varietals = [
     {
         name: 'Pinot Noir',
         type: 'Red',
