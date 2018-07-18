@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const varietalSchema = new Schema({
     name: String,
     type: { type: Schema.Types.ObjectId, ref: "Type" },
+    typestring: String,
     possibleRegions: [{ type: Schema.Types.ObjectId, ref: "Country" }],
     // countryFoodPairings: [String],
 });

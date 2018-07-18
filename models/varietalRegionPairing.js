@@ -3,8 +3,10 @@ const Schema = mongoose.Schema;
 
 const regionPairingSchema = new Schema({
     varietal: Schema.Types.ObjectId,
+    varietalstring: String,
     // countryId: Schema.Types.ObjectId,
     region: Schema.Types.ObjectId,
+    regionstring: String,
     pairings: [String]
     
 
