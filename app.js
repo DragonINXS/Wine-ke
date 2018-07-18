@@ -88,9 +88,9 @@ app.use(flash());
 
 passport.use(new LocalStrategy((username, password, next) => {
   User.findOne({ username }, (err, user) => {
-    console.log(user)
+    console.log(user);
     if (err) {
-      console.log(err)
+      console.log(err);
       return next(err);
     }
     if (!user) {

@@ -30,7 +30,7 @@ router.post('/signup', (req, res, next) => {
         
         User.create({ username: theUsername, password: hashedPassword })
             .then((createdUser) => {
-                console.log('new user: ', createdUser)
+                console.log('new user: ', createdUser);
                 res.redirect('/wines');
             })
             .catch(err => console.log('Error while saving signup: ', err));
@@ -54,7 +54,7 @@ router.get('/logout', (req, res, next) => {
 });
 
 router.get('/wines', (req, res, next) => {
-    console.log('here')
+    console.log('here');
     res.render('users/landingPage');
 });
 
