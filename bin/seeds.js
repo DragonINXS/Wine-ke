@@ -10,10 +10,20 @@ const Type = require('../models/type');
 const dbName = 'wine-ke';
 mongoose.connect(`mongodb://localhost/${dbName}`);
 
+// const regions = [
+//     {
+//         name: 'Burgundy',
+
+//     }
+// ]
+
+
 const varietals = [
     {
         name: 'Pinot Noir',
-        type: 'Red',
+        type: {
+            name: 'red'
+        },
         possibleCountries: [
             {
                 name: 'USA',
@@ -63,3 +73,15 @@ const varietals = [
         
     }
 ];
+
+
+// use .create() to create entries in DB
+Varietal.create(varietals)
+    .then(varietals => {
+        varietals.forEach(oneVarietal => {
+            console.log('In DB: ', oneVarietal.name);
+        });
+        mongoose.disconnect();
+    })
+
+    .catch(err => console.log('Error while creating seeds: ', err));

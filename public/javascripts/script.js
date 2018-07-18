@@ -1,5 +1,8 @@
-document.addEventListener('DOMContentLoaded', () => {
+function submitBtnSignup() {
+  document.getElementById("signupForm").submit();
+}
 
-  console.log('IronGenerator JS imported successfully!');
+function submitBtnLogin() {
+  document.getElementById("loginForm").submit();
+}
 
-}, false);

@@ -1,11 +1,68 @@
+// grey: #dddfd4
+// yellow: #fae596
+// lt green: #3fb0ac
+// drk green: #173e43
+
+// font-family: 'Oswald', sans-serif;
+// font-family: 'Nunito', sans-serif;
+// font-family: 'Cabin', sans-serif;
+
+
+
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: aqua;
+  // padding: 50px;
+  
+  font-family: 'Oswald', sans-serif;
+
+
+  // font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #dddfd4;
 }
 
 a {
-  color: #00B7FF;
+  color: #173e43;
 }
 
+a:hover {
+  color: #3fb0ac;
+}
+
+.navigation {
+  background-color: none;
+  border-bottom: black;
+}
+
+.landing-top {
+  height: 80vh;
+  padding-top: 30vh;
+}
+
+.landing-top span:hover {
+  color: #3fb0ac;
+}
+
+.landing-bottom {
+  align-items: center;
+  
+}
+
+.landing-bottom img {
+  height: 40px;
+}
+
+.center {
+  display: flex;
+  
+}
+
+.logo {
+  letter-spacing: 10px;
+  // color: #3fb0ac;
+}
+
+.logo_subheading {
+  letter-spacing: 3px;
+  word-spacing: 25px;
+}
 

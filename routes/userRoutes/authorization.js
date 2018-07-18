@@ -4,9 +4,9 @@ const User = require('../../models/user');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
-router.get('/signup', (req, res, next) => {
-    res.render('users/signupPage');
-});
+// router.get('/signup', (req, res, next) => {
+//     res.render('users/signupPage');
+// });
 
 router.post('/signup', (req, res, next) => {
     const thePassword = req.body.thePassword;
@@ -29,12 +29,33 @@ router.post('/signup', (req, res, next) => {
         const hashedPassword = bcrypt.hashSync(thePassword, salt);
         
         User.create({ username: theUsername, password: hashedPassword })
-            .then(() => {
-                res.redirect('/');
+            .then((createdUser) => {
+                console.log('new user: ', createdUser)
+                res.redirect('/wines');
             })
             .catch(err => console.log('Error while saving signup: ', err));
     });
-    
+});
+
+// router.get('/login', (req, res, next) => {
+//     res.render('/', {message: req.flash('error')});
+// });
+
+router.post("/login", passport.authenticate("local", {
+    successRedirect: '/wines',
+    failureRedirect: '/',
+    failureFlash: true,
+    passReqToCallback: true
+}));
+
+router.get('/logout', (req, res, next) => {
+    req.logout();
+    res.redirect('/');
+});
+
+router.get('/wines', (req, res, next) => {
+    console.log('here')
+    res.render('users/landingPage');
 });
 
 module.exports = router;

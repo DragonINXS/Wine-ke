@@ -46,6 +46,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use(session({
+  secret: "our-passport-local-strategy-app",
+  resave: true,
+  saveUninitialized: true
+}));
+
+
 // Express View engine setup
 
 app.use(require('node-sass-middleware')({
@@ -81,7 +88,9 @@ app.use(flash());
 
 passport.use(new LocalStrategy((username, password, next) => {
   User.findOne({ username }, (err, user) => {
+    console.log(user)
     if (err) {
+      console.log(err)
       return next(err);
     }
     if (!user) {
@@ -98,10 +107,23 @@ passport.use(new LocalStrategy((username, password, next) => {
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use ((req, res, next)=>{
+  if(req.user){
+    res.locals.user = req.user; // !!!!!!
+  }
+  next();
+});
+
 const index = require('./routes/index');
 app.use('/', index);
 
 const authRoutes = require('./routes/userRoutes/authorization');
 app.use('', authRoutes);
+
+const landingRoutes = require('./routes/userRoutes/landing');
+app.use('/', ensureLogin.ensureLoggedIn(), landingRoutes);
+
+// const celebrityRoutes = require('./routes/celebrityRoutes');
+// app.use('/', ensureLogin.ensureLoggedIn(), celebrityRoutes);
 
 module.exports = app;
