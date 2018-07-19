@@ -29,7 +29,6 @@ mongoose.connect(`mongodb://localhost/${dbName}`);
 
 
 //-------- regionstring -> region id -----------
-
 // VarietalRegionPairing.find()
 //     .then(allVarietalRegionPairings => {
 //         allVarietalRegionPairings.forEach(aVarietalPairing => {
@@ -53,6 +52,17 @@ mongoose.connect(`mongodb://localhost/${dbName}`);
 //                 });
 //         });
 //     });
+
+Varietal.find()
+    .then(allVarietals => {
+        allVarietals.forEach(aVarietal => {
+            Type.findOne({ name: aVarietal.typestring })
+                .then(aType => {
+                    aVarietal.type = aType._id;
+                    aVarietal.save();
+                });
+        });
+    });
 
 
 //============================= SEEDS ====================================================

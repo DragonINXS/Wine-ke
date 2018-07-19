@@ -37,13 +37,9 @@ router.post('/signup', (req, res, next) => {
     });
 });
 
-// router.get('/login', (req, res, next) => {
-//     res.render('/', {message: req.flash('error')});
-// });
-
 router.post("/login", passport.authenticate("local", {
     successRedirect: '/wines',
-    failureRedirect: '/',
+    failureRedirect: '/failed-login',
     failureFlash: true,
     passReqToCallback: true
 }));
@@ -53,10 +49,10 @@ router.get('/logout', (req, res, next) => {
     res.redirect('/');
 });
 
-router.get('/wines', (req, res, next) => {
-    console.log('here');
-    res.render('users/landingPage');
-});
+// router.get('/wines', (req, res, next) => {
+//     console.log('here');
+//     res.render('users/landingPage');
+// });
 
 module.exports = router;
 

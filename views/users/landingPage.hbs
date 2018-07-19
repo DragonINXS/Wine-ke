@@ -11,27 +11,67 @@
     
     {{!-- <div class="row text-center my-5">
     </div> --}}
-    
+   <p>Data{{data}}</p>
     <div class="row text-center my-5 py-5">
         <div class="col"></div>
         <select class="col display-5 mx-5 form-control form-control-lg">
             <option>Type</option>
+
+            {{#each theType}}
+                <option>
+                    {{this.name}}
+                </option>
+            {{/each}}
+
         </select>
 
         <select class="col display-5 mx-5 form-control form-control-lg">
             <option>Varietal</option>
+
+            {{#each oneVar}}
+                <option>
+                    {{this.name}}
+                </option>
+            {{/each}}
+
+
         </select>
 
         <select class="col display-5 mx-5 form-control form-control-lg">
-            <option>Origin</option>
+            <option>Country</option>
+        </select>
+        
+        <select class="col display-5 mx-5 form-control form-control-lg">
+            <option>Region</option>
         </select>
         {{!-- <div class="col display-5">Type</div> --}}
         {{!-- <div class="col display-5">Varietal</div>
         <div class="col display-5">Origin</div> --}}
+{{!-- {{#each types}}
+    <li>{{this.name}}</li>
+{{/each}} --}}
+</ul>
         <div class="col"></div>
 
     </div>
+<ul>
+{{!-- <ul>
+{{#each varietals}}
+    <li>{{this.name}}</li>
+{{/each}}
+</ul>
+<ul>
+{{#each regions}}
+    <li>{{this.name}}</li>
+{{/each}}
+</ul>
+<ul>
+{{#each countries}}
+    <li>{{this.name}}</li>
+{{/each}}
+</ul> --}}
    
 </div>
+    
 
 </div>

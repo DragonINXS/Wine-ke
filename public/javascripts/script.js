@@ -1,8 +1,8 @@
-function submitBtnSignup() {
-  document.getElementById("signupForm").submit();
-}
+// func(tion submitBtnSignup() {
+//   document.getElementById("signupForm").submit();
+// }
 
-function submitBtnLogin() {
-  document.getElementById("loginForm").submit();
-}
-
+// function submitBtnLogin() {
+//   document.getElementById("loginForm").submit();
+// }
+)

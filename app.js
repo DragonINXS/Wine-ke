@@ -88,7 +88,7 @@ app.use(flash());
 
 passport.use(new LocalStrategy((username, password, next) => {
   User.findOne({ username }, (err, user) => {
-    console.log(user);
+    console.log('in passport user: ',user);
     if (err) {
       console.log(err);
       return next(err);
@@ -118,12 +118,12 @@ const index = require('./routes/index');
 app.use('/', index);
 
 const authRoutes = require('./routes/userRoutes/authorization');
-app.use('', authRoutes);
+app.use('/', authRoutes);
 
 const landingRoutes = require('./routes/userRoutes/landing');
-app.use('/', ensureLogin.ensureLoggedIn(), landingRoutes);
+app.use('/', landingRoutes);
 
-// const celebrityRoutes = require('./routes/celebrityRoutes');
-// app.use('/', ensureLogin.ensureLoggedIn(), celebrityRoutes);
+const apiRoutes = require('./routes/apiRoutes');
+app.use('/', apiRoutes);
 
 module.exports = app;
