@@ -35,4 +35,16 @@ a:hover {
   letter-spacing: 3px;
   word-spacing: 25px; }
 
+.wines-landing {
+  font-family: 'Lato', sans-serif;
+  height: 60vh;
+  padding-top: 15vh; }
+
+.color_lt-green {
+  color: #3fb0ac; }
+
+.dropdown {
+  border: 5px, solid, #3fb0ac;
+  background-color: transparent; }
+
 /*# sourceMappingURL=style.css.map */

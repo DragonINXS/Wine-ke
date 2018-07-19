@@ -11,6 +11,11 @@ const VarietalRegionPairing = require('../models/varietalRegionPairing');
 const dbName = 'wine-ke';
 mongoose.connect(`mongodb://localhost/${dbName}`);
 
+
+
+//======================= ASSIGNS OBJECT IDS POST SEED ================================
+
+//---------- countrystring -> country id --------------
 // Region.find()
 //     .then(allRegions => {
 //         allRegions.forEach(aRegion => {
@@ -21,6 +26,9 @@ mongoose.connect(`mongodb://localhost/${dbName}`);
 //                 });
 //         });
 //     });
+
+
+//-------- regionstring -> region id -----------
 
 // VarietalRegionPairing.find()
 //     .then(allVarietalRegionPairings => {
@@ -33,6 +41,8 @@ mongoose.connect(`mongodb://localhost/${dbName}`);
 //         });
 //     });
 
+
+//-------- varietalstring -> varietal id ---------
 // VarietalRegionPairing.find()
 //     .then(allVarietalRegionPairings => {
 //         allVarietalRegionPairings.forEach(aVarietalPairing => {
@@ -45,7 +55,7 @@ mongoose.connect(`mongodb://localhost/${dbName}`);
 //     });
 
 
-
+//============================= SEEDS ====================================================
 
 // //regional pairings
 // const regionPairings = [
@@ -157,75 +167,3 @@ mongoose.connect(`mongodb://localhost/${dbName}`);
 //     })
 //     .catch(err => console.log('Error while creating a RegionalPairing: ', err));
 
-
-
-
-// Beef (Braised, Grilled, Roasted, Stewed), Cheese (Aged, Stinky, Blue, Brie, Gorgonzola), Chocolate (Dark), Duck (Roasted), Filet Mignon, Game, Game Birds, Hamburgers (Grilled), Lamb (Braised, Griilled, Roasted, Rack of), Red Meat (Braised, Cured, Grilled, Roasted, Smoked, Fatty), Mint, Black Pepper, Rosemary, Squab (Grilled), Steak (Grilled, Rare w/ Young Wine), Tyme, Venison (Grilled, Roasted), McDonald (Big Mac, Burgers), Wendy's (Burgers), Burger King (Whopper, Burgers). Avoid (Delicate Dishes, Fish (Smoked), Fruit, Oysters, Seafood, Shellfish, Spicy Dishes)
-
-// const varietals = [
-//     {
-//         name: 'Cabernet Franc',
-//         type: {
-//             name: 'red'
-//         },
-//         possibleCountries: [
-//             {
-//                 name: 'USA',
-//                 possibleRegions: [
-//                     {
-//                         name: 'California',
-//                         regionFoodPairings: [
-//                             'Pairing1',
-//                             'Pairing2',
-//                             'Pairing3'
-//                         ]
-//                     }
-//                 ],
-//                 countryFoodPairings: [
-//                     'Pairing1',
-//                     'Pairing2',
-//                     'Pairing3'
-//                 ]
-//             },
-//             {
-//                 name: 'France',
-//                 possibleRegions: [
-//                     {
-//                         name: 'Bordeaux',
-//                         regionFoodPairings: [
-//                             'Pairing1',
-//                             'Pairing2',
-//                             'Pairing3'
-//                         ],
-//                     },
-//                     {
-//                         name: 'Loire',
-//                         regionFoodPairings: [
-//                             'Pairing1',
-//                             'Pairing2',
-//                             'Pairing3'
-//                         ],
-//                     }
-//                 ],
-//                 countryFoodPairings: [
-//                     'Pairing1',
-//                     'Pairing2',
-//                     'Pairing3'
-//                 ]
-//             }
-//         ],
-        
-//     }
-// ];
-
-
-// // use .create() to create entries in DB
-// Varietal.create(varietals)
-//     .then(varietals => {
-//         varietals.forEach(oneVarietal => {
-//             console.log('In DB: ', oneVarietal.name);
-//         });
-//         mongoose.disconnect();
-//     })
-
-//     .catch(err => console.log('Error while creating seeds: ', err));

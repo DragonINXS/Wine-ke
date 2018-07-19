@@ -4,9 +4,8 @@
 // drk green: #173e43
 
 // font-family: 'Oswald', sans-serif;
-// font-family: 'Nunito', sans-serif;
-// font-family: 'Cabin', sans-serif;
-
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Lato', sans-serif;
 
 
 
@@ -65,4 +64,25 @@ a:hover {
   letter-spacing: 3px;
   word-spacing: 25px;
 }
+
+.wines-landing {
+  // font-family: 'Montserrat', sans-serif;
+  font-family: 'Lato', sans-serif;
+  height: 60vh;
+  padding-top: 15vh;
+  // color: #328a87;
+  // color: #173e43;
+}
+
+.color_lt-green {
+  // color: #328a87;
+  color: #3fb0ac;
+
+}
+
+.dropdown {
+  border: 5px, solid, #3fb0ac;
+  background-color: transparent;
+}
+
 
