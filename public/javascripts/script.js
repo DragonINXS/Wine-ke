@@ -61,10 +61,45 @@ $('#country').change(function () {
     console.log('YOOOOOOOO');
 });
 
+//when region changes -> populate region pairings
+$('#region').change(function () {
+    const regionId = $(this).val();
+    const varietalId = $('#varietal').val();
+
+    console.log('regionId: ', regionId);
+    console.log('varietalId: ', varietalId);
+
+    axios.get(`/api/populateRegionPairings/${varietalId}/${regionId}`)
+        .then((relevantRegionPairing) => {
 
 
 
+            console.log('you moody little bitch');
+            console.log(relevantRegionPairing.data);
+            // $('#regionPairings')
 
+
+            // relevantRegions.data.forEach(aRegion => {
+            //     $('#region').append(`<option value=${aRegion._id}>${aRegion.name}</option>`);
+                
+            // });
+
+
+            relevantRegionPairing.data.forEach(aRelevantRegionPairing => {
+                console.log('helloooooo nick');
+                console.log('aRelevantRegionPairing._id: ', aRelevantRegionPairing);
+                console.log('aRelevantRegionPairing.pairings: ', aRelevantRegionPairing);
+
+                $('#regionPairing').append(`<a href='https://www.ubereats.com/en-US/search/?q=${aRelevantRegionPairing}' target='_blank'>${aRelevantRegionPairing}</a>`);
+            });
+
+
+
+        });
+
+
+
+});
 
 // $('#varietal').change(function () { console.log('YOOOOOOOOvarietal'); });
 // $('#country').change(function () { console.log('YOOOOOOOOcountry'); });

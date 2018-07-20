@@ -1,0 +1,23 @@
+
+
+<div class="container">
+  <div>
+
+  </div>
+  <div class="col"></div>
+  
+  <div class="col">
+    <p>Made by: {{ theSuggestioner.username }}</p>
+    <form class="align-middle" action="/suggestions/{{suggestion._id}}/update" method="POST">
+      
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Feedback: </label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" name="editedSuggestion" rows="3">{{ suggestion.suggestion }}</textarea>
+      </div>
+      <button type="submit">Update</button>
+    </form>
+  </div>
+  
+  <div class="col"></div>
+
+</div>

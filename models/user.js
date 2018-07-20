@@ -5,7 +5,8 @@ const userSchema = new Schema({
     username: String,
     password: String,
     history: [{ type: Schema.Types.ObjectId, ref: "Selection" }],
-    role: {type: String, enum:["admin", "user"], default: "user"}
+    role: { type: String, enum: ["admin", "user"], default: "user" }
+    
 });
 
 const User = mongoose.model("User", userSchema);

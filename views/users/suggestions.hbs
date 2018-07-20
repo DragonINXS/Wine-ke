@@ -1,0 +1,16 @@
+
+
+
+<ul>
+    {{#each allSuggestions}}
+    <li>
+        {{ this.suggestioner.username }} - {{ this.suggestion }} 
+        {{#if this.isSuggestioner}}
+            <a href="/suggestions/{{this._id}}/edit">Edit</a>
+            <form action="/suggestions/{{this._id}}/delete" method="POST">
+                <button type="submit">Delete</button>
+            </form>
+        {{/if}}
+    </li>
+    {{/each}}
+</ul>

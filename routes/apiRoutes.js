@@ -7,6 +7,7 @@ const Varietal = require('../models/varietal');
 const Country = require('../models/country');
 const Region = require('../models/region');
 const Type = require('../models/type');
+const RegionPairing = require('../models/varietalRegionPairing');
 
 
 
@@ -19,7 +20,7 @@ router.get('/api/getVarietals/:typeID', (req, res, next) => {
         }));
 });
 
-//gets regions by varietal ans only deliver the regions in a country
+//gets regions by varietal and only delivers the regions in selected country
 router.get('/api/populateRegions/:varietalID/:countryID', (req, res, next) => {
     // console.log('=======================================');
     // console.log(req.params.varietalID);
@@ -33,14 +34,21 @@ router.get('/api/populateRegions/:varietalID/:countryID', (req, res, next) => {
                 // console.log(req.params.countryID);
                 if (aRegion.parentCountry.equals(req.params.countryID)) { 
                     relevantRegions.push(aRegion);
-
-                    
                 }
-                
-                
                 res.json(relevantRegions);
             });
         }));
+});
+
+//gets regionalPairings based on varietal -> region selection :: axios is in script.js
+router.get('/api/populateRegionPairings/:varietalID/:regionID', (req, res, next) => {
+    // console.log('region shit ===================', req.params.regionalPairingID);
+    // const relavantRegionPairings = [];
+    RegionPairing.findOne({ $and: [{ varietal: req.params.varietalID }, { region: req.params.regionID }] })
+        .then((aRegionPairing) => {
+            res.json(aRegionPairing.pairings);
+        
+        });
 });
 
 //gets regions by varietal and finds the parent countries
@@ -52,6 +60,7 @@ router.get('/api/getRegions/:varietalID', (req, res, next) => {
             res.json(foundVarietal);
         }));
 });
+
 
 
 

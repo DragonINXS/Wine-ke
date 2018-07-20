@@ -123,6 +123,9 @@ app.use('/', authRoutes);
 const landingRoutes = require('./routes/userRoutes/landing');
 app.use('/', landingRoutes);
 
+const suggestionRoutes = require('./routes/userRoutes/suggestion');
+app.use('/', suggestionRoutes);
+
 const apiRoutes = require('./routes/apiRoutes');
 app.use('/', apiRoutes);
 
