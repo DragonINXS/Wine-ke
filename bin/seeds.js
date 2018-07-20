@@ -9,7 +9,7 @@ const Type = require('../models/type');
 const VarietalRegionPairing = require('../models/varietalRegionPairing');
 
 const dbName = 'wine-ke';
-mongoose.connect(`mongodb://localhost/${dbName}`);
+mongoose.connect(process.env.MONGODB_URI);
 
 
 
@@ -68,47 +68,47 @@ mongoose.connect(`mongodb://localhost/${dbName}`);
 
 //============================= SEEDS ====================================================
 
-// //regional pairings
-// const regionPairings = [
-//     {
-//         varietalstring: 'Cabernet Franc',
-//         regionstring: 'Loire',
-//         pairings: [
-//             // 'beef: roasted, stewed, braised grilled',
-//             // 'lamb: roasted, braised, grilled, Rack of',
-//             // 'duck: roasted',
-//             'AVOID: light/delicate dishes, seafood, shellfish, fruit, spicy dishes',
+//regional pairings
+const regionPairings = [
+    {
+        varietalstring: 'Cabernet Franc',
+        regionstring: 'Loire',
+        pairings: [
+            // 'beef: roasted, stewed, braised grilled',
+            // 'lamb: roasted, braised, grilled, Rack of',
+            // 'duck: roasted',
+            'AVOID: light/delicate dishes, seafood, shellfish, fruit, spicy dishes',
             
-//             'cheese: aged, stinky, (Blue, Brie, Gorgonzola)',
-//             'chocolate: dark',
-//             'burgers',
-//             'vegetables: roasted',
-//             'vegetarian',
-//             'stirfry: w/ red meats',
-//             'chinese food: w/ red meats and crunchy vegetables'
-//         ]
-//     },
+            'cheese: aged, stinky, (Blue, Brie, Gorgonzola)',
+            'chocolate: dark',
+            'burgers',
+            'vegetables: roasted',
+            'vegetarian',
+            'stirfry: w/ red meats',
+            'chinese food: w/ red meats and crunchy vegetables'
+        ]
+    },
 
-//     {
-//         varietalstring: 'Albarino',
-//         regionstring: 'Rias Baixas',
-//         pairings: [
+    {
+        varietalstring: 'Albarino',
+        regionstring: 'Rias Baixas',
+        pairings: [
     
-//             'seafood',
-//             'sushi',
-//             "vietnamese",
-//             "thai",
-//             'carribean seafood',
-//             'mexican',
-//             'fruit',
-//             'avacado',
-//             'cheese: fresh/soft cheese(mozzarella, cream cheese, etc), Monterey Jack, Provolone, Swiss, Gruyere',
+            'seafood',
+            'sushi',
+            "vietnamese",
+            "thai",
+            'carribean seafood',
+            'mexican',
+            'fruit',
+            'avacado',
+            'cheese: fresh/soft cheese(mozzarella, cream cheese, etc), Monterey Jack, Provolone, Swiss, Gruyere',
     
-//             'GENERAL: light/medium dishes w/ citrus and/or green herbs',
-//             'AVOID: heavy dishes '
-//         ]
-//     },
-// ];
+            'GENERAL: light/medium dishes w/ citrus and/or green herbs',
+            'AVOID: heavy dishes '
+        ]
+    },
+];
 
 //regions
 const bordeaux = { _id: new mongoose.Types.ObjectId(), name: 'Bordeaux', countrystring: 'France' };
