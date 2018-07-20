@@ -9,23 +9,23 @@ const Country = require('../../models/country');
 const Region = require('../../models/region');
 const Type = require('../../models/type');
  
+// ,  ensureLogin.ensureLoggedIn('/')
 
-
-router.get('/wines',  ensureLogin.ensureLoggedIn('/'),(req, res, next) => {
-    console.log(">>>>>>>>>>>>>>>>>>>>>>> routeing to wines url <<<<<<<<<<<<")
+router.get('/wines',   (req, res, next) => {
+    // console.log(">>>>>>>>>>>>>>>>>>>>>>> routeing to wines url <<<<<<<<<<<<")
     // res.render('users/landingPage');
     Type.find()
         .then(allTypes => {
-            console.log("all the types >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ", allTypes)
+            // console.log("all the types >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ", allTypes)
             Varietal.find()
                 .then((allVarietal) => {
-                    console.log("varietals ============================== ", allVarietal)
+                    // console.log("varietals ============================== ", allVarietal)
                     Country.find()
                         .then((allCountries) => {
-                            console.log("all the countries :::::::::::::::::::::::::::::::: ", allCountries)
+                            // console.log("all the countries :::::::::::::::::::::::::::::::: ", allCountries)
                             Region.find()
                                 .then((allRegions) => {
-                                    console.log("all the regions }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}} ", allRegions)
+                                    // console.log("all the regions }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}} ", allRegions)
                                     var data = {
                                         types: allTypes,
                                         varietals: allVarietal,

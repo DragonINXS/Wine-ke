@@ -56,8 +56,6 @@ a:hover {
 }
 
 .logo {
-  color: #3fb0ac;
-
   letter-spacing: 10px;
   // color: #3fb0ac;
 }
@@ -76,9 +74,20 @@ a:hover {
   // color: #173e43;
 }
 
+.wines-landing select {
+  // border: 2px solid #d15959;
+  border: none;
+}
+
 .color_lt-green {
   // color: #328a87;
   color: #3fb0ac;
+
+}
+
+.color_drk-green {
+  // color: #328a87;
+  color: #173e43;
 
 }
 

@@ -5,7 +5,7 @@ const varietalSchema = new Schema({
     name: String,
     type: { type: Schema.Types.ObjectId, ref: "Type" },
     typestring: String,
-    possibleRegions: [{ type: Schema.Types.ObjectId, ref: "Country" }],
+    possibleRegions: [{ type: Schema.Types.ObjectId, ref: "Region" }],
     // countryFoodPairings: [String],
 });
 

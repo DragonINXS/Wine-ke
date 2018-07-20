@@ -53,16 +53,17 @@ mongoose.connect(`mongodb://localhost/${dbName}`);
 //         });
 //     });
 
-Varietal.find()
-    .then(allVarietals => {
-        allVarietals.forEach(aVarietal => {
-            Type.findOne({ name: aVarietal.typestring })
-                .then(aType => {
-                    aVarietal.type = aType._id;
-                    aVarietal.save();
-                });
-        });
-    });
+//------------ typestring -> type id ------------------
+// Varietal.find()
+//     .then(allVarietals => {
+//         allVarietals.forEach(aVarietal => {
+//             Type.findOne({ name: aVarietal.typestring })
+//                 .then(aType => {
+//                     aVarietal.type = aType._id;
+//                     aVarietal.save();
+//                 });
+//         });
+//     });
 
 
 //============================= SEEDS ====================================================

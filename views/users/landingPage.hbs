@@ -2,7 +2,7 @@
 
 <div class="container my-5 ">
     <div class="align-middle text-center">
-        <span class="display-4 font-weight-bold color_lt-green">tell us about your wine.</span>
+        <span class="display-3 font-weight-bold color_lt-green">tell us about your wine.</span>
 
     </div>
 </div>
@@ -11,67 +11,54 @@
     
     {{!-- <div class="row text-center my-5">
     </div> --}}
-   <p>Data{{data}}</p>
     <div class="row text-center my-5 py-5">
         <div class="col"></div>
-        <select class="col display-5 mx-5 form-control form-control-lg">
-            <option>Type</option>
-
-            {{#each theType}}
-                <option>
+        <select id="type" class="col display-5 mx-5 form-control form-control-lg">
+            <option>type</option>
+            {{#each types}}
+                <option value="{{this.id}}">
                     {{this.name}}
                 </option>
             {{/each}}
 
         </select>
 
-        <select class="col display-5 mx-5 form-control form-control-lg">
+        <select id="varietal" class="col display-5 mx-5 form-control form-control-lg">
             <option>Varietal</option>
 
-            {{#each oneVar}}
-                <option>
-                    {{this.name}}
-                </option>
-            {{/each}}
-
-
+    
         </select>
 
-        <select class="col display-5 mx-5 form-control form-control-lg">
+        <select id="country" class="col display-5 mx-5 form-control form-control-lg">
             <option>Country</option>
+           
+    
+
+
         </select>
         
-        <select class="col display-5 mx-5 form-control form-control-lg">
+        <select id="region" class="col display-5 mx-5 form-control form-control-lg">
             <option>Region</option>
         </select>
-        {{!-- <div class="col display-5">Type</div> --}}
-        {{!-- <div class="col display-5">Varietal</div>
-        <div class="col display-5">Origin</div> --}}
-{{!-- {{#each types}}
-    <li>{{this.name}}</li>
-{{/each}} --}}
-</ul>
+
         <div class="col"></div>
 
     </div>
-<ul>
-{{!-- <ul>
-{{#each varietals}}
-    <li>{{this.name}}</li>
-{{/each}}
-</ul>
-<ul>
-{{#each regions}}
-    <li>{{this.name}}</li>
-{{/each}}
-</ul>
-<ul>
-{{#each countries}}
-    <li>{{this.name}}</li>
-{{/each}}
-</ul> --}}
-   
+
 </div>
+
+<div class="container-fluid">
+
+<div class="row d-flex justify-content-center">
+   
+        <span class="display-4 text-center font-weight-bold color_drk-green">it would be great with...</span>
+</div>
+
+<div class="row d-flex justify-content-center">
     
+    <span class="display-5 my-5 font-weight-bold color_drk-green">this stuff</span>
+  
+</div>
+
 
 </div>

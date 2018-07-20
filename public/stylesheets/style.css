@@ -29,7 +29,6 @@ a:hover {
   display: flex; }
 
 .logo {
-  color: #3fb0ac;
   letter-spacing: 10px; }
 
 .logo_subheading {
@@ -41,8 +40,14 @@ a:hover {
   height: 60vh;
   padding-top: 15vh; }
 
+.wines-landing select {
+  border: none; }
+
 .color_lt-green {
   color: #3fb0ac; }
+
+.color_drk-green {
+  color: #173e43; }
 
 .dropdown {
   border: 5px, solid, #3fb0ac;

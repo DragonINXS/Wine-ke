@@ -13,14 +13,14 @@ router.post('/signup', (req, res, next) => {
     const theUsername = req.body.theUsername;
     
     if (thePassword === "" || theUsername === "") {
-        res.render('users/signupPage', { errorMessage: 'Please fill out Username and Password to create an account' });
+        // res.render('users/signupPage', { errorMessage: 'Please fill out Username and Password to create an account' });
         return;
     }
     
     User.findOne({ username: theUsername })
     .then((responseFromDB) => {
         if (responseFromDB !== null) {
-            res.render('users/signupPage', { errorMessage: `Sorry Username: ${theUsername} is already taken` });
+            // res.render('users/signupPage', { errorMessage: `Sorry Username: ${theUsername} is already taken` });
             return;
         }
 
