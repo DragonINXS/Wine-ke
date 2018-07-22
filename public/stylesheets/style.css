@@ -37,8 +37,8 @@ a:hover {
 
 .wines-landing {
   font-family: 'Lato', sans-serif;
-  height: 60vh;
-  padding-top: 15vh; }
+  height: 55vh;
+  padding-top: 10vh; }
 
 .wines-landing select {
   border: none; }
