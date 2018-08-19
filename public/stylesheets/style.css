@@ -13,8 +13,11 @@ a:hover {
   border-bottom: black; }
 
 .landing-top {
-  height: 80vh;
+  height: 70vh;
   padding-top: 30vh; }
+
+.landing-top a {
+  text-decoration: none; }
 
 .landing-top span:hover {
   color: #3fb0ac; }
@@ -41,7 +44,12 @@ a:hover {
   padding-top: 10vh; }
 
 .wines-landing select {
-  border: none; }
+  border: none;
+  appearance: none; }
+
+.wines-landing section {
+  border: none;
+  background-color: none; }
 
 .color_lt-green {
   color: #3fb0ac; }
@@ -60,6 +68,15 @@ a:hover {
 .pairings a {
   padding: 20px;
   text-transform: lowercase;
+  text-decoration: none;
+  color: #3fb0ac; }
+
+.pairings a:hover {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #173e43; }
+
+.more-wine a:hover {
   text-decoration: none; }
 
 /*# sourceMappingURL=style.css.map */

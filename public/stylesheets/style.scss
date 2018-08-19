@@ -7,15 +7,10 @@
 // font-family: 'Montserrat', sans-serif;
 // font-family: 'Lato', sans-serif;
 
-
+//===========================================================================
 
 body {
-  // padding: 50px;
-  
   font-family: 'Oswald', sans-serif;
-
-
-  // font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #dddfd4;
 }
 
@@ -33,8 +28,12 @@ a:hover {
 }
 
 .landing-top {
-  height: 80vh;
+  height: 70vh;
   padding-top: 30vh;
+}
+
+.landing-top a {
+text-decoration: none;
 }
 
 .landing-top span:hover {
@@ -43,7 +42,6 @@ a:hover {
 
 .landing-bottom {
   align-items: center;
-  
 }
 
 .landing-bottom img {
@@ -52,7 +50,6 @@ a:hover {
 
 .center {
   display: flex;
-  
 }
 
 .logo {
@@ -77,18 +74,23 @@ a:hover {
 .wines-landing select {
   // border: 2px solid #d15959;
   border: none;
+  // -webkit-appearance: none;
+  appearance: none; 
+}
+
+.wines-landing section {
+  border:none;
+  background-color: none;
 }
 
 .color_lt-green {
   // color: #328a87;
   color: #3fb0ac;
-
 }
 
 .color_drk-green {
   // color: #328a87;
   color: #173e43;
-
 }
 
 .dropdown {
@@ -105,7 +107,15 @@ a:hover {
   padding: 20px;
   text-transform: lowercase;
   text-decoration: none;
-  // target-new: tab;
+  color: #3fb0ac;
+}
 
+.pairings a:hover{
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #173e43;
+}
 
+.more-wine a:hover{
+  text-decoration: none;
 }

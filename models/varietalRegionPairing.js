@@ -8,8 +8,6 @@ const regionPairingSchema = new Schema({
     region: Schema.Types.ObjectId,
     regionstring: String,
     pairings: [String]
-    
-
 
     // type: { type: Schema.Types.ObjectId, ref: "Type" },
     // possibleCountries: [{ type: Schema.Types.ObjectId, ref: "Country" }],

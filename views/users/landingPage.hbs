@@ -3,7 +3,6 @@
 <div class="container my-4 ">
     <div class="align-middle text-center">
         <span class="display-3 font-weight-bold color_lt-green">tell us about your wine.</span>
-
     </div>
 </div>
 
@@ -14,27 +13,20 @@
     <div class="row text-center my-5 py-4">
         <div class="col"></div>
         <select id="type" class="col display-5 mx-5 form-control form-control-lg">
-            <option>type</option>
+            <option>Type</option>
             {{#each types}}
                 <option value="{{this.id}}">
                     {{this.name}}
                 </option>
             {{/each}}
-
         </select>
 
         <select id="varietal" class="col display-5 mx-5 form-control form-control-lg">
             <option>Varietal</option>
-
-    
         </select>
 
         <select id="country" class="col display-5 mx-5 form-control form-control-lg">
             <option>Country</option>
-           
-    
-
-
         </select>
         
         <select id="region" class="col display-5 mx-5 form-control form-control-lg">
@@ -57,8 +49,7 @@
     
 </div>
 
-<div id="regionPairing" class="row mb-5 display-5 d-flex  font-weight-bold justify-content-center pairings">
-    
+<div id="regionPairing" class="row mb-5 display-5 d-flex font-weight-bold justify-content-center pairings">
     {{!-- <span class="display-5 my-5 font-weight-bold color_drk-green">this stuff</span> --}}
   
 </div>
@@ -66,7 +57,12 @@
 <div class="row align-middle text-center landing-bottom">
     {{!-- <div class="col">Perfect Pairings Everytime</div> --}}
     <div class="col"><img src="images/Eats_Logo_Whit_Horiz.png"></div>
-    <div class="col"><a href="https://drizly.com/search?co=1786&q=albarino&utf8=%E2%9C%93" target="_blank"><img src="images/Drizly.png"></a></div>
+    <a href="https://drizly.com/search?co=1786&q=albarino&utf8=%E2%9C%93" target="_blank">
+        <div class="col border border-dark rounded">
+            <img src="images/Drizly.png">
+            <h4 class="font-weight-bold color_lt-green">GET MORE<br>WINE HERE</h4>
+        </div>
+    </a>
     <div class="col"><img src="images/Postmates_horizont.png"></div>
     {{!-- <div class="col">From Chinese takeout to Frois Grois</div> --}}
     {{!-- <div class="col"></div> --}}

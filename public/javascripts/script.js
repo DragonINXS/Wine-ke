@@ -16,12 +16,9 @@ $('#type').change(function () {
             $('#varietal').append('<option>varietal</option>');
 
             relevantVarietals.data.forEach(aVarietal => {
-                $('#varietal').append(`<option value=${aVarietal._id}>${aVarietal.name}</option>`);
-                
+                $('#varietal').append(`<option value=${aVarietal._id}>${aVarietal.name}</option>`); 
             });
         });
-
-    console.log('YOOOOOOOO');
 });
 
 $('#varietal').change(function () {
@@ -36,15 +33,12 @@ $('#varietal').change(function () {
                     $('#country').append(`<option value=${aRegion.parentCountry._id}>${aRegion.parentCountry.name}</option>`);
             });
         });
-    
-    console.log('YOOOOOOOO');
 });
 
 $('#country').change(function () {
     const countryId = $(this).val();
     const varietalId = $('#varietal').val();
 
-    
     console.log('varietalId: ', varietalId);
     axios.get(`/api/populateRegions/${varietalId}/${countryId}`)
         .then((relevantRegions) => {
@@ -57,8 +51,6 @@ $('#country').change(function () {
                 
             });
         });
-
-    console.log('YOOOOOOOO');
 });
 
 //when region changes -> populate region pairings
@@ -66,25 +58,12 @@ $('#region').change(function () {
     const regionId = $(this).val();
     const varietalId = $('#varietal').val();
 
-    console.log('regionId: ', regionId);
-    console.log('varietalId: ', varietalId);
+    // console.log('regionId: ', regionId);
+    // console.log('varietalId: ', varietalId);
 
     axios.get(`/api/populateRegionPairings/${varietalId}/${regionId}`)
         .then((relevantRegionPairing) => {
-
-
-
-            console.log('you moody little bitch');
-            console.log(relevantRegionPairing.data);
-            // $('#regionPairings')
-
-
-            // relevantRegions.data.forEach(aRegion => {
-            //     $('#region').append(`<option value=${aRegion._id}>${aRegion.name}</option>`);
-                
-            // });
-
-
+            // console.log(relevantRegionPairing.data);
             relevantRegionPairing.data.forEach(aRelevantRegionPairing => {
                 console.log('helloooooo nick');
                 console.log('aRelevantRegionPairing._id: ', aRelevantRegionPairing);
@@ -92,13 +71,7 @@ $('#region').change(function () {
 
                 $('#regionPairing').append(`<a href='https://www.ubereats.com/en-US/search/?q=${aRelevantRegionPairing}' target='_blank'>${aRelevantRegionPairing}</a>`);
             });
-
-
-
         });
-
-
-
 });
 
 // $('#varietal').change(function () { console.log('YOOOOOOOOvarietal'); });

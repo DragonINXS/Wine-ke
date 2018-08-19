@@ -47,7 +47,6 @@ router.get('/api/populateRegionPairings/:varietalID/:regionID', (req, res, next)
     RegionPairing.findOne({ $and: [{ varietal: req.params.varietalID }, { region: req.params.regionID }] })
         .then((aRegionPairing) => {
             res.json(aRegionPairing.pairings);
-        
         });
 });
 
@@ -56,14 +55,9 @@ router.get('/api/getRegions/:varietalID', (req, res, next) => {
     Varietal.findById(req.params.varietalID)
         .populate({path: 'possibleRegions', populate: {path: 'parentCountry'}})
         .then((foundVarietal => {
-
             res.json(foundVarietal);
         }));
 });
-
-
-
-
 
 
 

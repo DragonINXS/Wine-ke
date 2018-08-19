@@ -34,53 +34,13 @@ router.get('/wines',   (req, res, next) => {
                                     };
                                     res.render('users/landingPage', data);
                                 })
-                                .catch(err => console.log('Error while finding allTypes: ', err));
+                                .catch(err => console.log('Error while finding allRegions: ', err));
                         });
                 });
         })
         .catch(err => console.log('Error while finding allTypes: ', err));
     });
     
-// const wineApi = axios.create({
-//         baseURL: '/'
-// })
-    
-// function getVartietalInfo(id) {
-//     wineApi.get(id)
-//         .then(response => {
-//             console.log(response.data);
-//         })
-//         .catch(err => console.log('Error while getting VarrietalInfo'));
-// }
-
-//---------DONT THINK THIS IS RIGHT----------------
-// document.getElementById("#").somethingHappens = function () {
-//     getVartietalInfo('1');
-// };
-
-
-//-------------EXAMPLE----------------------------
-    // const pokeApi = axios.create({
-    //     baseURL: 'http://pokeapi.co/api/v2/pokemon'
-    // })
-    
-    // function getPokemonInfo(id) {
-    //   pokeApi.get(id)
-    //   .then(response => {
-    //     console.log(response.data)
-    //   })
-    //   .catch(err => {
-    //     console.error(err)
-    //   })
-    // }
-    
-    // document.getElementById("pokeButton").onclick = function(){
-    //   getPokemonInfo("1");
-    // }
-
-
-
-
 
 
 module.exports = router;
